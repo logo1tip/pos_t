@@ -1,17 +1,18 @@
 from user.models import CustomUser
 from user.serializers import UserSerializer
 from rest_framework import generics
-from rest_framework import permissions 
+from rest_framework.permissions import IsAdminUser 
+from order.permissions import IsAdministrator
 
 
 
 class UserList(generics.ListCreateAPIView):
     
-    """ Представление для создания пользователя """
+    """ Представление для получения списка пользователей """
     
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [IsAdminUser|IsAdministrator]
 
 
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -20,4 +21,4 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [IsAdminUser|IsAdministrator]
