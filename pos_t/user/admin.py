@@ -4,6 +4,9 @@ from user.models import CustomUser
 
 
 class AdminUser(UserAdmin):
+    
+    """ Административная панель пользователя """
+
     list_display = (
         "id",
         "first_name",

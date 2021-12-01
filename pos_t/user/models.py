@@ -17,6 +17,8 @@ class _PhoneValidator:
 
 
 class CustomUser(AbstractUser):
+    
+    """ Модель пользователя """
 
     ADMINISTRATOR = "AD"
     WAITER = "WT"
