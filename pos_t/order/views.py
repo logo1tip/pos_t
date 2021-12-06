@@ -36,7 +36,7 @@ class DishList(generics.ListCreateAPIView):
     permission_classes = [IsAdminUser|IsAdministrator]
 
 
-@extend_schema(description='Admin only')
+@extend_schema(description='Only Admin and Waiter')
 class DishDetail(generics.RetrieveUpdateDestroyAPIView):
 
     """ Представление для получения, обновления и удаления блюд """
@@ -46,7 +46,7 @@ class DishDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAdminUser|IsAdministrator|IsWaiter]
 
 
-@extend_schema(description='Admin only')
+@extend_schema(description='For all users')
 class OrderList(generics.ListCreateAPIView):
 
     """ Представление для получения списка заказов """
@@ -56,7 +56,7 @@ class OrderList(generics.ListCreateAPIView):
     permission_classes = [IsAdminUser|IsAdministrator|IsWaiter|IsCook]
 
 
-@extend_schema(description='Admin only')
+@extend_schema(description='Only Admin and Waiter')
 class OrderRU(generics.RetrieveUpdateAPIView):
 
     """ Представление для получения и обновления блюд """
@@ -66,7 +66,7 @@ class OrderRU(generics.RetrieveUpdateAPIView):
     permission_classes = [IsAdminUser|IsAdministrator|IsWaiter]
 
 
-@extend_schema(description='Admin only')
+@extend_schema(description='Only Admin and Cook')
 class OrderDestroy(generics.DestroyAPIView):
 
     """ Представление для удаления блюд """
