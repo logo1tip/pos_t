@@ -9,5 +9,5 @@ class UserSerializer(ModelSerializer):
     class Meta:
         model = CustomUser
         fields = ("id", "username", "first_name", "last_name",
-         "password", "phone", "role"
+         "password", "phone", "role", "is_active", "is_staff"
          )
