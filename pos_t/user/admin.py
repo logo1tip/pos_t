@@ -31,6 +31,7 @@ class AdminUser(UserAdmin):
                     "groups",
                     "role",
                     "is_staff",
+                    "is_active",
                 )
             },
         ),
